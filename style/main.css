@@ -5,6 +5,7 @@ body {
 }
 
 .page-header {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,4 +14,20 @@ body {
     height: 100vh;
     background-color: #121212;
     text-align: center;
+}
+
+.page-header .header-socials {
+    position: absolute;
+    bottom: 2.4rem;
+    left: 2.4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-header .header-socials .social-icon {
+    margin-top: .8rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    background-color: #fafafa;
+    cursor: pointer;
 }

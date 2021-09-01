@@ -6,6 +6,7 @@
     align-items: center;
     padding: 2.4rem;
     width: 100%;
+    z-index: 5;
 }
 
 .page-navigation .nav-logo {
@@ -28,10 +29,4 @@
 
 .page-navigation .nav-items .nav-item {
     margin-left: 2.4rem;
-    opacity: .75;
-    transition: opacity .4s;
-}
-
-.page-navigation .nav-items .nav-item:hover {
-    opacity: 1;
 }
