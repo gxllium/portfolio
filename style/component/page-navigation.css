@@ -15,6 +15,29 @@
     background-color: #fafafa;
 }
 
+.page-navigation .nav-hider {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+@media (min-width: 900px) {
+    .page-navigation .nav-hider {
+        display: none;
+    }
+}
+
+.page-navigation .nav-hider .bar {
+    width: 3.2rem;
+    height: 1px;
+    background-color: #fafafa;
+}
+
+.page-navigation .nav-hider .bar:not(:last-child) {
+    margin-bottom: 5px;
+}
+
 .page-navigation .nav-items {
     display: none;
     align-items: center;
