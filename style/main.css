@@ -26,9 +26,7 @@ body {
 
 .page-header .header-socials .social-icon {
     margin-top: .8rem;
-    width: 1.6rem;
-    height: 1.6rem;
-    background-color: #fafafa;
+    font-size: 1.8rem;
     cursor: pointer;
 }
 
