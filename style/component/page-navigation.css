@@ -81,8 +81,6 @@
 
 .page-navigation .nav-mobile-menu .menu-hider {
     margin-right: 2.4rem;
-    width: 2.4rem;
-    height: 2.4rem;
-    background-color: #fafafa;
+    font-size: 2.4rem;
     cursor: pointer;
 }

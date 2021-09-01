@@ -16,6 +16,18 @@ body {
     text-align: center;
 }
 
+.page-header .header-title {
+    margin-bottom: .4rem;
+    font-size: 3.2rem;
+    font-family: 'Kaisei Opti Regular', serif;
+}
+
+.page-header .header-subtitle {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+}
+
 .page-header .header-socials {
     position: absolute;
     bottom: 2.4rem;

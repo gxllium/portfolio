@@ -2,3 +2,8 @@
     font-family: 'Mulish Regular';
     src: url('../../font/Mulish/Mulish-Regular.ttf');
 }
+
+@font-face {
+    font-family: 'Kaisei Opti Regular';
+    src: url('../../font/KaiseiOpti/KaiseiOpti-Regular.ttf');
+}
