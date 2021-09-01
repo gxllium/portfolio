@@ -10,7 +10,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2.4rem;
+    padding: 0 7.2rem;
     height: 100vh;
     min-height: 54rem;
     background-color: #000000;
@@ -18,7 +18,7 @@ body {
 }
 
 .page-header .header-title {
-    margin-bottom: .4rem;
+    margin-bottom: 1.2rem;
     font-size: 3.2rem;
     font-family: 'Kaisei Opti Regular', serif;
 }
@@ -54,7 +54,7 @@ body {
 }
 
 .page-header .header-ctas .header-cta:not(:last-child) {
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.8rem;
 }
 
 @media (min-width: 600px) {
@@ -67,6 +67,11 @@ body {
 .page-header .header-ctas .header-cta:hover {
     outline: .1rem solid #fafafa;
     outline-offset: .2rem;
+}
+
+.page-header .header-ctas .header-cta.primary {
+    background-color: #fafafa;
+    color: #121212;
 }
 
 .page-header .header-socials {
