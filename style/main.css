@@ -1,0 +1,15 @@
+body {
+    color: #fafafa;
+    font-size: 1.4rem;
+}
+
+.page-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2.4rem;
+    height: 100vh;
+    background-color: #121212;
+    text-align: center;
+}
