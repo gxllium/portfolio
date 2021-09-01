@@ -23,6 +23,12 @@ body {
     font-family: 'Kaisei Opti Regular', serif;
 }
 
+@media (min-width: 600px) {
+    .page-header .header-title {
+        margin-bottom: .4rem;
+    }
+}
+
 .page-header .header-subtitle {
     margin-bottom: 4.8rem;
     font-size: 1.2rem;
@@ -59,7 +65,7 @@ body {
 
 @media (min-width: 600px) {
     .page-header .header-ctas .header-cta:not(:last-child) {
-        margin-right: 2.4rem;
+        margin-right: 1.8rem;
         margin-bottom: 0;
     }
 }
