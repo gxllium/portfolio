@@ -53,3 +53,36 @@
 .page-navigation .nav-items .nav-item {
     margin-left: 2.4rem;
 }
+
+.page-navigation .nav-mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 2.4rem 0;
+    width: 100%;
+    max-width: 40rem;
+    height: 100vh;
+    background-color: #121212;
+    transition: right .4s;
+}
+
+@media (min-width: 900px) {
+    .page-navigation .nav-mobile-menu {
+        display: none;
+    }
+}
+
+.page-navigation.open .nav-mobile-menu {
+    right: 0;
+}
+
+.page-navigation .nav-mobile-menu .menu-hider {
+    margin-right: 2.4rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    background-color: #fafafa;
+    cursor: pointer;
+}
