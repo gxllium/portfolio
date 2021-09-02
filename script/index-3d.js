@@ -32,9 +32,9 @@ const orbitControls = new OrbitControls(camera, renderer.domElement);
 function Plane(segments) {
     this.segments = segments;
     this.geometry = new THREE.PlaneGeometry(this.segments, this.segments, this.segments - 1, this.segments - 1);
-    this.material = new THREE.MeshBasicMaterial({
+    this.material = new THREE.MeshLambertMaterial({
         color: 0xFFFFFF,
-        wireframe: true
+        wireframe: false
     });
 
     this.createMesh = function() {
@@ -83,6 +83,11 @@ const skyBoxMaterial = new THREE.MeshBasicMaterial({
 const skyBoxMesh = new THREE.Mesh(skyBoxGeometry, skyBoxMaterial);
 
 scene.add(skyBoxMesh);
+
+const pointLight = new THREE.PointLight(0xFFFFFF, 1, 32);
+pointLight.position.set(0, 16, 0);
+
+scene.add(pointLight);
 
 const update = function() {
     orbitControls.update();
