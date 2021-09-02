@@ -2,7 +2,9 @@ import * as THREE from '../node_modules/three/build/three.module.js';
 import { OrbitControls } from '../script/OrbitControls.js';
 
 const pageHeader = document.querySelector('.page-header');
+
 const scene = new THREE.Scene();
+scene.fog   = new THREE.FogExp2(0xFF0000, 0.01);
 
 let cameraFov    = 75;
 let cameraAspect = window.innerWidth / window.innerHeight;
