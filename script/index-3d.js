@@ -24,3 +24,19 @@ window.addEventListener('resize', () => {
 
 renderer.domElement.classList.add('header-background');
 pageHeader.appendChild(renderer.domElement);
+
+const update = function() {
+
+}
+
+const render = function() {
+    renderer.render(scene, camera);
+}
+
+const mainLoop = function() {
+    requestAnimationFrame(mainLoop);
+    update();
+    render();
+}
+
+mainLoop();
