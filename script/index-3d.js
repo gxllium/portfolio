@@ -25,6 +25,17 @@ window.addEventListener('resize', () => {
 renderer.domElement.classList.add('header-background');
 pageHeader.appendChild(renderer.domElement);
 
+const planeGeometry = new THREE.PlaneGeometry(32, 32, 31, 31);
+const planeMaterial = new THREE.MeshBasicMaterial({
+    color: 0xFFFFFF,
+    wireframe: true
+});
+
+const planeMesh = new THREE.Mesh(planeGeometry, planeMaterial);
+planeMesh.rotation.x = -Math.PI / 2;
+
+scene.add(planeMesh);
+
 const update = function() {
 
 }
