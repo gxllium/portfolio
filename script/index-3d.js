@@ -13,5 +13,14 @@ const camera = new THREE.PerspectiveCamera(cameraFov, cameraAspect, cameraNear, 
 const renderer = new THREE.WebGLRenderer(scene, camera);
 renderer.setSize(window.innerWidth, window.innerHeight);
 
+window.addEventListener('resize', () => {
+    let width  = window.innerWidth;
+    let height = window.innerHeight;
+
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+    renderer.setSize(width, height);
+});
+
 renderer.domElement.classList.add('header-background');
 pageHeader.appendChild(renderer.domElement);
