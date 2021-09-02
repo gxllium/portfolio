@@ -56,6 +56,9 @@ const mainPlane = new Plane(32);
 mainPlane.mesh.rotation.x = -Math.PI / 2;
 scene.add(mainPlane.mesh);
 
+const simplexSeed = Date.now();
+const openSimplex = openSimplexNoise(simplexSeed);
+
 const testHeightMap = {
     content: []
 }
@@ -64,7 +67,7 @@ for (let x = 0; x < mainPlane.segments; x++) {
         testHeightMap.content.push({
             x: x,
             y: y,
-            z: Math.round(Math.random() * 4)
+            z: openSimplex.noise2D(x * 0.1, y * 0.1) * 4
         });
     }
 }
