@@ -74,6 +74,16 @@ for (let x = 0; x < mainPlane.segments; x++) {
 
 mainPlane.applyHeightMap(testHeightMap);
 
+const skyBoxGeometry = new THREE.BoxGeometry(256, 256, 256);
+const skyBoxMaterial = new THREE.MeshBasicMaterial({
+    color: 0x0000A3,
+    wireframe: false,
+    side: THREE.BackSide
+});
+const skyBoxMesh = new THREE.Mesh(skyBoxGeometry, skyBoxMaterial);
+
+scene.add(skyBoxMesh);
+
 const update = function() {
     orbitControls.update();
 }
