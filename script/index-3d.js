@@ -41,11 +41,35 @@ function Plane(segments) {
         return new THREE.Mesh(this.geometry, this.material);
     }
     this.mesh = this.createMesh();
+
+    this.applyHeightMap = function(heightMap) {
+        let positionArray = this.mesh.geometry.attributes.position.array;
+        for (let i = 0, j = 0, l = positionArray.length; i < l; i += 1, j += 3) {
+            if (i < heightMap.content.length) {
+                positionArray[j + 2] = heightMap.content[i].z;
+            }
+        }
+    }
 }
 
 const mainPlane = new Plane(32);
 mainPlane.mesh.rotation.x = -Math.PI / 2;
 scene.add(mainPlane.mesh);
+
+const testHeightMap = {
+    content: []
+}
+for (let x = 0; x < mainPlane.segments; x++) {
+    for (let y = 0; y < mainPlane.segments; y++) {
+        testHeightMap.content.push({
+            x: x,
+            y: y,
+            z: Math.round(Math.random() * 4)
+        });
+    }
+}
+
+mainPlane.applyHeightMap(testHeightMap);
 
 const update = function() {
     orbitControls.update();
