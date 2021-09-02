@@ -1,4 +1,5 @@
 import * as THREE from '../node_modules/three/build/three.module.js';
+import { OrbitControls } from '../script/OrbitControls.js';
 
 const pageHeader = document.querySelector('.page-header');
 const scene = new THREE.Scene();
@@ -9,6 +10,7 @@ let cameraNear   = 0.1;
 let cameraFar    = 1000;
 
 const camera = new THREE.PerspectiveCamera(cameraFov, cameraAspect, cameraNear, cameraFar);
+camera.position.z = 3;
 
 const renderer = new THREE.WebGLRenderer(scene, camera);
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -25,19 +27,28 @@ window.addEventListener('resize', () => {
 renderer.domElement.classList.add('header-background');
 pageHeader.appendChild(renderer.domElement);
 
-const planeGeometry = new THREE.PlaneGeometry(32, 32, 31, 31);
-const planeMaterial = new THREE.MeshBasicMaterial({
-    color: 0xFFFFFF,
-    wireframe: true
-});
+const orbitControls = new OrbitControls(camera, renderer.domElement);
 
-const planeMesh = new THREE.Mesh(planeGeometry, planeMaterial);
-planeMesh.rotation.x = -Math.PI / 2;
+function Plane(segments) {
+    this.segments = segments;
+    this.geometry = new THREE.PlaneGeometry(this.segments, this.segments, this.segments - 1, this.segments - 1);
+    this.material = new THREE.MeshBasicMaterial({
+        color: 0xFFFFFF,
+        wireframe: true
+    });
 
-scene.add(planeMesh);
+    this.createMesh = function() {
+        return new THREE.Mesh(this.geometry, this.material);
+    }
+    this.mesh = this.createMesh();
+}
+
+const mainPlane = new Plane(32);
+mainPlane.mesh.rotation.x = -Math.PI / 2;
+scene.add(mainPlane.mesh);
 
 const update = function() {
-
+    orbitControls.update();
 }
 
 const render = function() {
